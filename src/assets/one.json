@@ -1,0 +1,60 @@
+[
+  {
+    "title": "AfghanistanHistory",
+    "authors": ["Tom.Reding"],
+    "time_published": "2017-06-05T04:18:18Z",
+    "sections": [
+      {
+        "title": "",
+        "paragraphs": "#REDIRECT [[History of Afghanistan]]\n\n{{Redirect category shell|1=\n{{R from CamelCase}}\n}}",
+        "attributes": [
+          {
+            "name": "location",
+            "values": [{ "name": "location", "value": "Kanpur" }]
+          }
+        ],
+        "id": 0
+      },
+      {
+        "title": "",
+        "paragraphs": "#REDIRECT [[History of Afghanistan]]\n\n{{Redirect category shell|1=\n{{R from CamelCase}}\n}}",
+        "attributes": [
+          {
+            "name": "Redirect category shell",
+            "values": [{ "name": "location", "value": "Patna" }]
+          }
+        ],
+        "id": 0
+      }
+    ]
+  },
+  {
+    "title": "India",
+    "authors": ["Tom.Reding"],
+    "time_published": "2020-06-05T04:18:18Z",
+    "sections": [
+      {
+        "title": "",
+        "paragraphs": "#REDIRECT [[History of Afghanistan]]\n\n{{Redirect category shell|1=\n{{R from CamelCase}}\n}}",
+        "attributes": [
+          {
+            "name": "location",
+            "values": [{ "name": "location", "value": "AK" }]
+          }
+        ],
+        "id": 0
+      },
+      {
+        "title": "",
+        "paragraphs": "#REDIRECT [[History of Afghanistan]]\n\n{{Redirect category shell|1=\n{{R from CamelCase}}\n}}",
+        "attributes": [
+          {
+            "name": "title",
+            "values": [{ "name": "location", "value": "Bihar" }]
+          }
+        ],
+        "id": 0
+      }
+    ]
+  }
+]
