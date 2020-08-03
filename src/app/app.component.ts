@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.httpClient.get("assets/delhi_weather_data.txt", 
+    this.httpClient.get("assets/final.txt", 
     {responseType: 'text'}).subscribe(data => {
       this.getDataService.getData(data).subscribe(res => {
         this.rendeLineChartOption(res);
@@ -29,14 +29,14 @@ export class AppComponent implements OnInit {
 
   rendeLineChartOption(myData) {
     let dateList = myData.map(function (item) {
-        return item[2];
+        return item[1];
     });
     let dayValueList = myData.map(function (item) {
-        return item[4];
+        return item[2];
     });
 
     let nightValueList = myData.map(function (item) {
-      return item[5];
+      return item[3];
     });
 
     this.barChartOption = {
@@ -50,7 +50,10 @@ export class AppComponent implements OnInit {
       }
     },
     tooltip: {
-      trigger: "axis"
+      trigger: "axis",
+      position: function (pt) {
+        return [pt[0], '10%'];
+      }
     },
     legend: {
         data: ['Day Temp', 'Night Temp']
@@ -68,8 +71,9 @@ export class AppComponent implements OnInit {
       }
     ],
     xAxis: [{
+        boundaryGap: [0, 30],
         data: dateList,
-        name: "Months (Jan 2019 - July 2020)",
+        name: "Months",
         nameLocation: "middle",
         nameGap: 35,
         nameTextStyle: { color: "black", fontWeight: "bold" },
