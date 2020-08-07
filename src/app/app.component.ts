@@ -9,6 +9,13 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
+  monthMap = {"January": 0, 
+              "February" :1,
+            "March" : 2,
+          'April': 3,
+        "May": 4,
+      "June": 5, "July": 6, "August": 7, "September": 8, "October" : 9,
+    "November": 10, "December": 12}
   title = "timeseries-assignment";
   dataLoaded = false;
   barChartOption: EChartOption;
@@ -26,6 +33,11 @@ export class AppComponent implements OnInit {
       });
     });
   }
+
+  onScroll(e) {
+    console.log(e);
+  }
+  
 
   rendeLineChartOption(myData) {
     let dateList = myData.map(function (item) {
@@ -53,6 +65,16 @@ export class AppComponent implements OnInit {
       trigger: "axis",
       position: function (pt) {
         return [pt[0], '10%'];
+      },
+      formatter: function(params) { 
+        const date = new Date(2019, 0, params[0].dataIndex + 1 );
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        let res: any = date.toLocaleDateString('en-US', options);
+        let arr: any = params;
+        arr.forEach((data) => {
+            res += '<br/>' + data.marker + data.seriesName + ': ' + data.value + " °C";
+        });
+        return res;
       }
     },
     legend: {
@@ -85,6 +107,9 @@ export class AppComponent implements OnInit {
       nameLocation: "middle",
       nameGap: 50,
       nameTextStyle: { color: "black", fontWeight: "bold" },
+      axisLabel: {
+        formatter: '{value} °C'
+      }
     },
     series: [
         {   
